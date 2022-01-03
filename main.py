@@ -19,20 +19,6 @@ for i in range(100):
 
 'Done!!!!!'
 
-st.write('DataFrame')
-
-df=pd.DataFrame({
-    '1列目':[1,2,3,4],
-    '2列目':[10,20,30,40]
-})
-
-st.write(df)
-st.dataframe(df,width=100, height=100) #st.dataframeで表の設定ができる　動的なテーブル
-st.dataframe(df.style.highlight_max(axis=0), width=800, height=400) #st.dataframeで表の設定ができる
-### axis=0  列      axis=1　行
-st.table(df.style.highlight_max(axis=0)) #st.tableでstatic(静的)なテーブルを作成
-### reference  https://docs.streamlit.io/library/api-reference/data
-
 
 #magic command
 '''
@@ -67,16 +53,6 @@ df=pd.DataFrame(
 )
 st.map(df)
 
-st.write('Display Image')
-img=Image.open(r"C:\Users\hooch\Pictures\Icons\Flash.ico")
-st.image(img, caption='Yeah !', use_column_width=True)     #use_column_width 実際のレイアウトの横幅に合わせて表示
-st.image(img, caption='OOrya !')     #use_column_width 実際のレイアウトの横幅に合わせて表示
-
-### reference  https://docs.streamlit.io/library/api-reference/media
-
-if st.checkbox('Show Image'):
-    img=Image.open(r"C:\Users\hooch\Pictures\Icons\Flash.ico")
-    st.image(img, caption='OOrya !')     #use_column_width 実際のレイアウトの横幅に合わせて表示
 
 option= st.selectbox(
     'あなたが好きな数字を教えてください。',
